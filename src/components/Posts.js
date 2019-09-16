@@ -7,7 +7,7 @@ class Posts extends Component {
   componentWillMount() {
     console.log("mounting");
     //this the function that will call the API and write the initial redux store.
-    this.props.fetchPosts();
+    // this.props.fetchPosts();
     console.log("mounting finished");
   }
   componentWillReceiveProps(nextProps) {

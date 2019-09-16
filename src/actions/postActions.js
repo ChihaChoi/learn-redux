@@ -1,7 +1,8 @@
 import { FETCH_POSTS, NEW_POST } from "./types";
 
+//called from componentWillMount in Posts.js
 export const fetchPosts = () => dispatch => {
-  console.log("fetching");
+  console.log("fetch posts action called");
   fetch("https://jsonplaceholder.typicode.com/posts")
     .then(res => res.json())
     .then(posts =>
@@ -12,8 +13,9 @@ export const fetchPosts = () => dispatch => {
     );
 };
 
+//postData is passed from "this.props.createPost(post);" from PostForm.js
 export const createPost = postData => dispatch => {
-  console.log("action called");
+  console.log("create post action called");
   fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "POST",
     headers: {
@@ -29,3 +31,7 @@ export const createPost = postData => dispatch => {
       })
     );
 };
+
+// export const testAction = () => dispatch => {
+//   dispatch
+// }

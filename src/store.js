@@ -15,4 +15,5 @@ const store = createStore(
   )
 );
 
+//sent to App.js and passed through Provider
 export default store;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { createPost } from "../actions/postActions";
+import { createPost, fetchPosts } from "../actions/postActions";
 
 class PostForm extends Component {
   constructor(props) {
@@ -9,6 +9,9 @@ class PostForm extends Component {
     this.state = {};
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+  }
+  componentWillMount() {
+    // this.props.fetchPosts();
   }
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
@@ -20,6 +23,7 @@ class PostForm extends Component {
       title: this.state.title,
       body: this.state.body
     };
+    //call action with props, passing post
     this.props.createPost(post);
   }
   render() {
@@ -59,6 +63,6 @@ PostForm.propTypes = {
 };
 
 export default connect(
-  null,
-  { createPost }
+  null, //no props to display in this component so leave as null
+  { createPost, fetchPosts } //set createPost action to prop, multiple actions can be sent to this object
 )(PostForm);
