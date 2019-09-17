@@ -8,6 +8,7 @@ const initialState = {
 export default function(state = initialState, action) {
   console.log(action.type);
   switch (action.type) {
+    //combine state with object from action and return
     case FETCH_POSTS:
       return {
         ...state,

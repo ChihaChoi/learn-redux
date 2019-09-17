@@ -7,7 +7,8 @@ export const fetchPosts = () => dispatch => {
     .then(res => res.json())
     .then(posts =>
       dispatch({
-        type: FETCH_POSTS, //name of the store / "state"
+        //name of the reducer switch case which will choose where the payload is written in the state
+        type: FETCH_POSTS,
         payload: posts //payload = data = whatever is written to the "state"
       })
     );
@@ -26,7 +27,7 @@ export const createPost = postData => dispatch => {
     .then(res => res.json())
     .then(post =>
       dispatch({
-        type: NEW_POST, //name of the store / "state"
+        type: NEW_POST,
         payload: post //payload = data = whatever is written to the "state"
       })
     );
