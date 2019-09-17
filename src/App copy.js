@@ -1,11 +1,13 @@
 import React from "react";
-import logo from "./logo.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "./actions";
 
 function App() {
+  //view store
   const counter = useSelector(state => state.counter);
   const isLogged = useSelector(state => state.isLogged);
+
+  //dispatch or call the action
   const dispatch = useDispatch();
   return (
     <div className="App">

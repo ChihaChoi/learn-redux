@@ -7,7 +7,7 @@ class Posts extends Component {
   componentWillMount() {
     console.log("mounting");
     //this the function that will call the API and write the initial redux store.
-    // this.props.fetchPosts();
+    this.props.fetchPosts();
     console.log("mounting finished");
   }
   componentWillReceiveProps(nextProps) {
@@ -18,7 +18,7 @@ class Posts extends Component {
   }
 
   render() {
-    //props.posts is from the reducer...? or from the store?
+    //props.posts is from the store?
     const postItems = this.props.posts.map(post => (
       <div key={post.id}>
         <h3>{post.title}</h3>

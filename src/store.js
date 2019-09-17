@@ -4,14 +4,19 @@ import rootReducer from "./reducers";
 
 const initialState = {};
 
+//https://github.com/reduxjs/redux-thunk
+//Redux Thunk middleware allows you to write action creators that return a function instead of an action.
+// The thunk can be used to delay the dispatch of an action, or to dispatch only if a certain condition is met.
+// The inner function receives the store methods dispatch and getState as parameters.
+
 const middleware = [thunk];
 
 const store = createStore(
-  rootReducer,
-  initialState,
+  rootReducer, //allReducers
+  initialState, //empty state
   compose(
     applyMiddleware(...middleware),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() //redux devtools extension dont forget this shit
   )
 );
 
