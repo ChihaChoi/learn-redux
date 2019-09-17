@@ -13,7 +13,7 @@ const middleware = [thunk];
 
 const store = createStore(
   rootReducer, //allReducers
-  initialState, //empty state
+  initialState, //this is where the state is stored...?
   compose(
     applyMiddleware(...middleware),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() //redux devtools extension dont forget this shit
